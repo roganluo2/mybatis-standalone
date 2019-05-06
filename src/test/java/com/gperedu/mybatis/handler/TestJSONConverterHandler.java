@@ -29,7 +29,6 @@ public class TestJSONConverterHandler extends BaseTest {
         BolgMapper mapper = sqlSession.getMapper(BolgMapper.class);
         int i = mapper.insertSelective(blog);
         Assert.assertTrue(i > 0);
-
     }
 
 
@@ -40,7 +39,6 @@ public class TestJSONConverterHandler extends BaseTest {
         Blog blog = mapper.selectByPrimaryKey(3);
         Assert.assertNotNull(blog.getComment());
         System.out.println(blog.getComment().getContent());
-
     }
 
 }

@@ -1,0 +1,2 @@
+1.ObjectFactory中创建的对象，属性被重写了，所有对象都是先创建，再就被重写了，如何实现把结果值*3的效果？
+2.JSONConverterHandler再mybatis-cfg.xml中注册以后，对所有的comment对象都生效了，如何实现typeHandler只是针对单个sql语句生效

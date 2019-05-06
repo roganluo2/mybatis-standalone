@@ -7,8 +7,7 @@
         -->
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="content" property="content" jdbcType="VARCHAR" />
-        <!--<result column="comment" property="comment" jdbcType="VARCHAR" typeHandler="com.gperedu.mybatis.handler.CommentHandler"/>-->
-        <result column="comment" property="comment" jdbcType="VARCHAR" typeHandler="com.gperedu.mybatis.handler.JSONConverterHandler"/>
+        <result column="comment" property="comment" jdbcType="VARCHAR" />
 
     </resultMap>
 
@@ -17,7 +16,7 @@
         insert into gper_blog values(null, #{content}, #{comment})
     </insert>
 
-    <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" >
         select  * from gper_blog where id = #{id}
     </select>
 

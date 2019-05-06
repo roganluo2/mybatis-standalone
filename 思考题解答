@@ -1,0 +1,12 @@
+1.resultMap和resultType的区别
+ResultMap 和 ResultType都是mybatis针对JDBC返回的结果集做映射的对象，目的是将结果集映射为Java类型
+ResultType只能完成数据库字段名和java类型属性名一致情况下属性值的映射，对于属性值不一致情况下，不能完成映射
+ResultMap 指定了从结果集字段名到java属性映射规则，可以完成复杂的映射，如对象关系映射，一对多，多对多情况下结果集到java类型的映射
+2.prepareStatement 和 statement的区别
+prepareStatement预处理执行语句，
+   将执行语句和参数分离，语句中通过占位符指定参数的位置，数据库可以缓存执行语句，提高执行效率
+   会对传入占位符的参数转义，可以预防sql注入的问题
+   mybatis中使用PreparedStatementHandler完成xml解析，并生成prepareStatement
+statement语句
+   不会对传入参数转义，有sql注入的风险
+3.
