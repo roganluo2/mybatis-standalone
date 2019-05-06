@@ -9,4 +9,13 @@ prepareStatement预处理执行语句，
    mybatis中使用PreparedStatementHandler完成xml解析，并生成prepareStatement
 statement语句
    不会对传入参数转义，有sql注入的风险
-3.
+3.collection 和 association 的区别
+association一个复杂类型的关联，用来关联一对一，多对一的情况
+collection一个复杂类型集合的关联，可用来配置多对多，一对多的关联关系
+
+
+Executor区别
+Simple Reuse Batch
+Simple简单处理器，针对每条sql,创建对应的statement执行对象，然后发送到数据库执行
+Reuse 会把执行的sql通过statementMap缓存，缓存的key是sql,value是Statement对象，当执行相同的sql，可以重用原来创建的statement对象
+Batch 不是直发送sql执行语句，而是通过statement.addBatch(),把sql添加到批处理中，最终会分配发送到数据库执行
