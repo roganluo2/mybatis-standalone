@@ -9,9 +9,6 @@
         <result column="content" property="content" jdbcType="VARCHAR" />
         <result column="comment" property="comment" jdbcType="VARCHAR" />
 
-        <association property=""  />
-        <collection property="" ofType=""/>
-
     </resultMap>
 
 

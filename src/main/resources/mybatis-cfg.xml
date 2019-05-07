@@ -6,16 +6,9 @@
 <configuration>
 
     <properties resource="application.properties"/>
-
-    <!--<typeAliases>-->
-        <!--<typeAlias type="com.gperedu.mybatis.entity.Comment" alias="Comment"/>-->
-    <!--</typeAliases>-->
-
     <typeHandlers>
         <typeHandler handler="com.gperedu.mybatis.handler.JSONConverterHandler" javaType="com.gperedu.mybatis.entity.Comment" />
     </typeHandlers>
-
-
 
     <objectFactory type="com.gperedu.mybatis.objectfactory.MyObjectFactroy">
         <property name="gupao" value="666"/>
