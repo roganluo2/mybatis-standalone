@@ -34,10 +34,16 @@ public class TestJSONConverterHandler extends BaseTest {
 
     @Test
     public void testGetBlog(){
-        SqlSession sqlSession = getSqlSession(true);
+        SqlSession sqlSession = getSqlSession(false);
         BolgMapper mapper = sqlSession.getMapper(BolgMapper.class);
         Blog blog = mapper.selectByPrimaryKey(3);
-        Assert.assertNotNull(blog.getComment());
+        sqlSession.commit();
+        //开启第二个session
+        SqlSession sqlSession1 = getSqlSession(false);
+        BolgMapper mapper1 = sqlSession1.getMapper(BolgMapper.class);
+        System.out.println("第二次查询同样的值");
+        blog = mapper1.selectByPrimaryKey(3);
+//        Assert.assertNotNull(blog.getComment());
         System.out.println(blog.getComment().getContent());
     }
 

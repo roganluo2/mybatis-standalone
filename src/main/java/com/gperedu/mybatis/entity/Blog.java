@@ -1,17 +1,26 @@
 package com.gperedu.mybatis.entity;
 
+import java.io.Serializable;
+
 /**
  * @Description TODO
  * @Date 2019/5/6 11:16
  * @Created by rogan.luo
  */
-public class Blog {
+public class Blog implements Serializable {
 
     private Integer id;
 
     private String content;
 
     private Comment comment;
+
+    public Blog(){}
+
+    public Blog(Integer id, String content) {
+        this.id = id;
+        this.content = content;
+    }
 
     public Integer getId() {
         return id;

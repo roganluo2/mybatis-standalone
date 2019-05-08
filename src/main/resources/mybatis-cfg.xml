@@ -6,6 +6,10 @@
 <configuration>
 
     <properties resource="application.properties"/>
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+        <!-- 是否关闭一级缓存 -->
+    </settings>
     <typeHandlers>
         <typeHandler handler="com.gperedu.mybatis.handler.JSONConverterHandler" javaType="com.gperedu.mybatis.entity.Comment" />
     </typeHandlers>
