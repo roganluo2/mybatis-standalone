@@ -47,4 +47,20 @@ public class TestJSONConverterHandler extends BaseTest {
         System.out.println(blog.getComment().getContent());
     }
 
+    @Test
+    public void testUpdate(){
+        Blog blog = new Blog();
+        blog.setId(3);
+        Comment comment = new Comment();
+        comment.setId(5);
+        comment.setContent("测试udpagte");
+        blog.setComment(comment);
+        SqlSession sqlSession = getSqlSession(true);
+        BolgMapper mapper = sqlSession.getMapper(BolgMapper.class);
+        int i = mapper.updateById(blog);
+        sqlSession.commit();
+        Assert.assertTrue(i > 0);
+    }
+
+
 }
