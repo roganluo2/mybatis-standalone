@@ -6,10 +6,10 @@
 <configuration>
 
     <properties resource="application.properties"/>
-    <settings>
-        <setting name="logImpl" value="STDOUT_LOGGING" />
+    <!--<settings>-->
+        <!--<setting name="logImpl" value="STDOUT_LOGGING" />-->
         <!-- 是否关闭一级缓存 -->
-    </settings>
+    <!--</settings>-->
     <typeHandlers>
         <typeHandler handler="com.gperedu.mybatis.handler.JSONConverterHandler" javaType="com.gperedu.mybatis.entity.Comment" />
     </typeHandlers>
@@ -17,6 +17,11 @@
     <objectFactory type="com.gperedu.mybatis.objectfactory.MyObjectFactroy">
         <property name="gupao" value="666"/>
     </objectFactory>
+
+    <plugins>
+        <plugin interceptor="com.gperedu.mybatis.interceptor.LoggingInterceptor"/>
+        <plugin interceptor="com.gperedu.mybatis.interceptor.MyPageInterceptor"/>
+    </plugins>
 
     <environments default="development">
         <environment id="development">

@@ -44,7 +44,7 @@ public class TestJSONConverterHandler extends BaseTest {
         System.out.println("第二次查询同样的值");
         blog = mapper1.selectByPrimaryKey(3);
 //        Assert.assertNotNull(blog.getComment());
-        System.out.println(blog.getComment().getContent());
+        System.out.println("返回结果：" + blog.getComment().getContent());
     }
 
     @Test
@@ -53,7 +53,7 @@ public class TestJSONConverterHandler extends BaseTest {
         blog.setId(3);
         Comment comment = new Comment();
         comment.setId(5);
-        comment.setContent("测试udpagte");
+        comment.setContent("测试update");
         blog.setComment(comment);
         SqlSession sqlSession = getSqlSession(true);
         BolgMapper mapper = sqlSession.getMapper(BolgMapper.class);
